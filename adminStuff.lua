@@ -4,7 +4,7 @@ Player2 = game.Workspace.P2.HumanoidRootPart.CFrame
 game.Workspace.Player1.HumanoidRootPart.CFrame = game.Workspace.Player2.HumanoidRootPart.CFrame
 
 -- Tinker with fire
-local color = Color3.fromRGB(255,255,255)
+local color = Color3.fromRGB(x,y,z)
 local fireParent = game.Workspace
 local fire = Instance.new("Fire")
 fire.Parent = fireParent
@@ -19,7 +19,7 @@ colorCorrection.Saturation = saturation
 colorCorrection.Contrast = contrast
 
 -- Burn their heads!
-local color = Color3.fromRGB(255,255,255)
+local color = Color3.fromRGB(x,y,z)
 local fireSize = 5
 local pTable = game.Players:GetPlayers()
 for i,v in pairs(pTable) do
@@ -30,7 +30,7 @@ for i,v in pairs(pTable) do
 end
 
 -- Find ClassName
-local group = game.Workspace.X:GetChildren()
+local group = X:GetChildren()
 local className = ""
 for i,v in pairs(group) do
   if v.ClassName == className then
@@ -47,4 +47,16 @@ for i,v in pairs(pTable) do
       k:Destroy()
     end
   end
+end
+
+-- INFINITE Fire or really just X amount
+local amountOfFire = 1
+local fireColor = Color3.fromRGB(x,y,z)
+local fireSize = 5
+local parentPart = nil
+for i=1,amountOfFire do
+  local fire = Instance.new("Fire")
+  fire.Size = fireSize
+  fire.Color = fireColor
+  fire.Parent = parentPart
 end
