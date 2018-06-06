@@ -29,3 +29,11 @@ for i,v in pairs(pTable) do
   fire.Size = fireSize
 end
 
+-- Find ClassName
+local group = game.Workspace.X:GetChildren()
+local className = ""
+for i,v in pairs(group) do
+  if v.ClassName == className then
+    v
+  end
+end
