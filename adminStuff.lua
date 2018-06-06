@@ -123,6 +123,7 @@ local player = "NotInTheBand"
 local howManyParts = 1
 local fireSize = 7
 local color = Color3.fromRGB(100,25,200)
+local isFire = true
 local pTable = game.Players:GetPlayers()
 for i,v in pairs(pTable) do
 	if string.lower(v.Name) == string.lower(player) then
@@ -131,10 +132,12 @@ for i,v in pairs(pTable) do
 			part.Parent = v.Character
 			part.CFrame = v.Character.HumanoidRootPart.CFrame
 			part.Color = color
-			local fire = Instance.new("Fire")
-			fire.Parent = part
-			fire.Color = color
-			fire.Size = fireSize
+			if isFire then
+				local fire = Instance.new("Fire")
+				fire.Parent = part
+				fire.Color = color
+				fire.Size = fireSize
+			end
 		end
 	end
 end
