@@ -61,14 +61,52 @@ for i=1,amountOfFire do
   fire.Parent = parentPart
 end
 
+-- Transparent Heads For All!
+local transparency = 1
+local isFace = false
+local pTable = game.Players:GetPlayers()
+for i,v in pairs(pTable) do
+	v.Character.Head.Transparency = transparency
+	if isFace then
+		v.Character.Head.face.Transparency = transparency
+	else
+		v.Character.Head.face.Transparency = 0
+	end
+end
+
+-- Teleport all Players
+local finalPosition = game.Players.P1.Character.HumanoidRootPart.CFrame
+local pTable = game.Players:GetPlayers()
+for i,v in pairs(pTable) do
+	v.Character.HumanoidRootPart.CFrame = finalPosition
+end
+
+-- Transparent all players Hats minus me
+local exlusionName = "NotInTheBand"
+local isExclusion = false
+local transparency = .5
+local pTable = game.Players:GetPlayers()
+for i,v in pairs(pTable) do
+	if v.Name == exlusionName and isExclusion then
+	else
+		local cTable = v.Character:GetChildren()
+		for j,k in pairs(cTable) do
+			if k.ClassName == "Accessory" then
+				k.Handle.Transparency = transparency
+			end
+		end
+	end
+end
+
+
 -- Add Boombox to self
-local soundVolume = 1
+local soundVolume = 5
 local soundEmmiterSize = 10
 local soundMaxDistance = 10000
 local soundPlaybackSpeed = 1
 local soundTimePosition = 0
 local soundID = "rbxassetid://"
-local parentPart = X
+local parentPart = game.Workspace.NotInTheBand.Head
 local isSoundLooped = false
 local soundPlaying = true
 local sound = Instance.new("Sound")
