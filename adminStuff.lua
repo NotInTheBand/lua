@@ -19,7 +19,7 @@ colorCorrection.Saturation = saturation
 colorCorrection.Contrast = contrast
 
 -- Burn their heads!
-local color = Color3.fromRGB(x,y,z)
+local color = Color3.fromRGB(100,50,150)
 local fireSize = 5
 local pTable = game.Players:GetPlayers()
 for i,v in pairs(pTable) do
@@ -83,8 +83,8 @@ end
 
 -- Transparent all players Hats minus me
 local exlusionName = "NotInTheBand"
-local isExclusion = false
-local transparency = .5
+local isExclusion = true
+local transparency = 1
 local pTable = game.Players:GetPlayers()
 for i,v in pairs(pTable) do
 	if v.Name == exlusionName and isExclusion then
@@ -139,5 +139,18 @@ for i,v in pairs(pTable) do
 				fire.Size = fireSize
 			end
 		end
+	end
+end
+
+-- Set Health All
+local isHealNotMax = false
+local pTable = game.Players:GetPlayers()
+local health = math.huge
+for i,v in pairs(pTable) do
+	if isHealNotMax then
+		v.Character.Humanoid.Health = health
+		else
+		v.Character.Humanoid.MaxHealth = health
+		v.Character.Humanoid.Health = health
 	end
 end
