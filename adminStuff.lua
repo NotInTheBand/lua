@@ -143,11 +143,11 @@ for i,v in pairs(pTable) do
 end
 
 -- Set Health All
-local isHealNotMax = false
+local isHealthNotMax = false
 local pTable = game.Players:GetPlayers()
 local health = math.huge
 for i,v in pairs(pTable) do
-	if isHealNotMax then
+	if isHealthNotMax then
 		v.Character.Humanoid.Health = health
 		else
 		v.Character.Humanoid.MaxHealth = health
