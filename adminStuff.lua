@@ -18,14 +18,14 @@ colorCorrection.Parent = game.Lighting
 colorCorrection.Saturation = saturation
 colorCorrection.Contrast = contrast
 
-
 -- Burn their heads!
 local color = Color3.fromRGB(255,255,255)
 local fireSize = 5
-local fire = Instance.new("Fire")
-pTable = game.Players:GetPlayers()
+local pTable = game.Players:GetPlayers()
 for i,v in pairs(pTable) do
+  local fire = Instance.new("Fire")
   fire.Parent = v.Character.Head
   fire.Color = color
   fire.Size = fireSize
 end
+
