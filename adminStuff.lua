@@ -60,3 +60,23 @@ for i=1,amountOfFire do
   fire.Color = fireColor
   fire.Parent = parentPart
 end
+
+-- Add Boombox to self
+local soundVolume = 1
+local soundEmmiterSize = 10
+local soundMaxDistance = 10000
+local soundPlaybackSpeed = 1
+local soundTimePosition = 0
+local soundID = "rbxassetid://"
+local parentPart = X
+local isSoundLooped = false
+local soundPlaying = true
+local sound = Instance.new("Sound")
+sound.Parent = parentPart
+sound.Volume = soundVolume
+sound.EmitterSize = soundEmmiterSize
+sound.MaxDistance = soundMaxDistance
+sound.PlaybackSpeed = soundPlaybackSpeed
+sound.TimePosition = soundTimePosition
+sound.SoundId = soundID
+sound.Playing = soundPlaying
