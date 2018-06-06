@@ -98,7 +98,6 @@ for i,v in pairs(pTable) do
 	end
 end
 
-
 -- Add Boombox to self
 local soundVolume = 5
 local soundEmmiterSize = 10
