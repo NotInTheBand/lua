@@ -37,3 +37,14 @@ for i,v in pairs(group) do
     v
   end
 end
+
+-- Remove Fire Heads
+local pTable = game.Players:GetPlayers()
+for i,v in pairs(pTable) do
+  local headTable = v.Character.Head:GetChildren()
+  for j,k in pairs(headTable) do
+    if k.ClassName == "Fire" then
+      k:Destroy()
+    end
+  end
+end
