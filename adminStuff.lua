@@ -154,3 +154,12 @@ for i,v in pairs(pTable) do
 		v.Character.Humanoid.Health = health
 	end
 end
+
+-- COLOR BODY All
+for i,v in pairs(game.Players:GetChildren()) do
+	for j,k in pairs(v.Character:GetChildren()) do
+		if k.ClassName == "Part" then
+			k.Color = Color3.fromRGB(math.random(1,255),math.random(1,255),math.random(1,255))
+		end
+	end
+end
