@@ -63,7 +63,7 @@ end
 
 -- Transparent Heads For All!
 local transparency = 1
-local isFace = false
+local isFace = true
 local pTable = game.Players:GetPlayers()
 for i,v in pairs(pTable) do
 	v.Character.Head.Transparency = transparency
@@ -164,3 +164,20 @@ for i,v in pairs(game.Players:GetChildren()) do
 	end
 end
 
+-- Transparent Person
+local players = {"NotInTheBand"}
+local transparency = .5
+local isTransparentHats = false
+for i,v in pairs(players) do
+	for j,k in pairs(game.Players:GetPlayers()) do
+		if string.lower(v) == string.lower(k.Name) then
+			for l,m in pairs(k.Character:GetChildren()) do
+				if m.ClassName == "Part" then
+					m.Transparency = transparency
+				elseif m.ClassName == "Accessory" and isTransparentHats then
+					m.Handle.Transparency =transparency
+				end
+			end
+		end
+	end
+end
